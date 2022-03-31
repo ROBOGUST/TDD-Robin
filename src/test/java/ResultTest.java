@@ -3,34 +3,43 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ResultTest {
 
+    @BeforeEach
+    public void startingTests(){
+        System.out.println("Running a new test.");
+    }
+    @AfterEach
+    public void endingTests(){
+        System.out.println("The test has passed.");
+    }
+
     @DisplayName("Fifty nine should return F")
     @Test
     void fiftyNineShouldReturnF(){
-        assertEquals('F', Result.determineGrade(59));
+        assertTrue('F' == Result.determineGrade(59));
     }
 
     @DisplayName("Sixty nine should return D")
     @Test
     void sixtyNineShouldReturnD(){
-        assertEquals('D', Result.determineGrade(69));
+        assertTrue('D' == Result.determineGrade(69));
     }
 
     @DisplayName("Seventy nine should return C")
     @Test
     void seventyNineShouldReturnC(){
-        assertEquals('C', Result.determineGrade(79));
+        assertTrue('C' == Result.determineGrade(79));
     }
 
     @DisplayName("Eighty nine should return B")
     @Test
     void eightyNineShouldReturnB(){
-        assertEquals('B', Result.determineGrade(89));
+        assertTrue('B' == Result.determineGrade(89));
     }
 
     @DisplayName("Ninety nine should return A")
     @Test
     void ninetyNineShouldReturnA(){
-        assertEquals('A', Result.determineGrade(99));
+        assertTrue('A' == Result.determineGrade(99));
     }
 
     @DisplayName("Zero should return F")
@@ -72,4 +81,16 @@ class ResultTest {
 
                 });
     }
+
+    @DisplayName("Ninety should not return F")
+    @Test
+    void ninetyShouldNotReturnF(){
+        assertNotEquals('F', Result.determineGrade(90));}
+
+    @DisplayName("Zero should not return A")
+    @Test
+    void zeroShouldNotReturnA(){
+        assertFalse('A' == Result.determineGrade(0));
+    }
+
 }
