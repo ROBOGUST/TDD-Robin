@@ -1,7 +1,7 @@
 
 public class Result {
 
-    public char determineGrade(int numberGrade){
+    public static char determineGrade(int numberGrade){
         if (numberGrade < 0){
             throw new IllegalArgumentException("Number grade cannot resolve");
         }
