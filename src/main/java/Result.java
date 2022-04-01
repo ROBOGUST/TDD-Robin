@@ -11,7 +11,7 @@ public class Result {
         else if (numberGrade < 70){
             return 'D';
         }
-        else if (numberGrade < 80){
+        else if (numberGrade < 70){
             return 'C';
         }
         else if (numberGrade < 90){
